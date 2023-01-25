@@ -1,0 +1,90 @@
+---
+import logosSmall from "../images/framework-logos-small.png";
+import smilingDeveloper from "../images/smiling_developer.jpeg";
+
+const heading = "Hi there, I am Henk Bourgonje";
+const text =
+  "I am a backend developer with a great passion for what I do. I'm currently building the backend of a brand new platform for a top 10 scale-up in the Netherlands.";
+---
+
+<section class="showcase">
+  <div class="container">
+    <div class="showcase-header">
+      <div class="showcase-header-text">
+        <div class="showcase-text">
+          <h1>{heading}</h1>
+          <p>
+            {text}
+          </p>
+        </div>
+      </div>
+
+      <div class="showcase-header-image">
+        <div class="showcase-img">
+          <img class="smiling_developer" src={smilingDeveloper} alt="" />
+          <img class="logos-small" src={logosSmall} alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .showcase-header {
+    display: flex;
+    height: 600px;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 100px;
+  }
+
+  .showcase-header-text {
+    flex-grow: 6;
+  }
+
+  .showcase-header-image {
+    flex-grow: 4;
+    align-items: flex-end;
+  }
+
+  .showcase {
+    height: auto;
+    background-color: var(--color-primary);
+    padding: 30px;
+  }
+  .showcase-text {
+    display: inherit;
+    color: #fff;
+    text-align: left;
+  }
+  .showcase-blog {
+    min-height: 300px;
+  }
+  .showcase h1 {
+    font-size: 50px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .showcase p {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .showcase-img {
+    text-align: center;
+  }
+  .showcase-img img {
+    border-radius: 10px;
+    margin: auto;
+  }
+  .showcase-demo {
+    color: #fff;
+    text-align: center;
+    font-weight: 300;
+  }
+
+  .smiling_developer {
+    height: 350px;
+    width: 350px;
+    border-radius: 50%;
+  }
+</style>

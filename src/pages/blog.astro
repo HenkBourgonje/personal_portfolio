@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/layout.astro";
+import Blog from "../components/Blog.astro";
+
+const posts = await Astro.glob("../posts/*.md");
+---
+
+<Layout title="Blog">
+  <section class="page-content">
+    <div class="container">
+      {
+        posts.map((post) => (
+          <Blog
+            title={post.frontmatter.title}
+            excerpt={post.frontmatter.excerpt}
+            slug={post.frontmatter.slug}
+          />
+        ))
+      }
+    </div>
+  </section>
+</Layout>

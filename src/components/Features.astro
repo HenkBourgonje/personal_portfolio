@@ -1,0 +1,54 @@
+---
+import Card from "./Card.astro";
+import klippaLogo from "../images/klippa_logo.webp";
+import ordinaLogo from "../images/ordina_logo.png";
+
+const featuresData = [
+  {
+    image: klippaLogo,
+    title: "Backend Developer",
+    body: "Astro renders HTML on the server and strips away any remaining, unused JavaScript. Astro renders HTML on the server and strips away any remaining, unused JavaScript. ",
+    techList: ["Golang", "GraphQL", "MySQL"],
+  },
+  {
+    image: ordinaLogo,
+    title: "Backend Developer",
+    body: " Need interactive UI? Load individual, non-blocking component islands in parallel. Astro renders HTML on the server and strips away any remaining, unused JavaScript. ",
+    techList: ["Golang", "GraphQL", "MySQL"],
+  },
+  {
+    image: ordinaLogo,
+    title: "Blockchain Graduation Project",
+    body: "Components only hydrate when they scroll into view. If you don't see it, Astro won't load it. Astro renders HTML on the server and strips away any remaining, unused JavaScript.",
+    techList: ["Golang", "GraphQL", "MySQL"],
+  },
+];
+---
+
+<section class="features">
+  <div class="container">
+    {
+      featuresData.map((feature) => (
+        <Card
+          image={feature.image}
+          title={feature.title}
+          body={feature.body}
+          techList={feature.techList}
+        />
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .features .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+  @media (max-width: 500px) {
+    .features .container {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
