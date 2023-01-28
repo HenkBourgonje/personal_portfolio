@@ -1,5 +1,4 @@
 ---
-import logosSmall from "../images/framework-logos-small.png";
 import smilingDeveloper from "../images/smiling_developer.jpeg";
 
 const heading = "Hi there, I am Henk Bourgonje";
@@ -22,7 +21,6 @@ const text =
       <div class="showcase-header-image">
         <div class="showcase-img">
           <img class="smiling_developer" src={smilingDeveloper} alt="" />
-          <img class="logos-small" src={logosSmall} alt="" />
         </div>
       </div>
     </div>
@@ -32,59 +30,46 @@ const text =
 <style>
   .showcase-header {
     display: flex;
-    height: 600px;
+    height: 40vh;
     flex-direction: row;
     justify-content: space-between;
-    padding-top: 100px;
+    align-items: center;
   }
 
   .showcase-header-text {
     flex-grow: 6;
   }
 
-  .showcase-header-image {
-    flex-grow: 4;
-    align-items: flex-end;
-  }
-
   .showcase {
     height: auto;
     background-color: var(--color-primary);
-    padding: 30px;
+    padding: 30px 0px;
   }
+
   .showcase-text {
     display: inherit;
     color: #fff;
     text-align: left;
   }
-  .showcase-blog {
-    min-height: 300px;
-  }
+
   .showcase h1 {
     font-size: 50px;
     color: #fff;
     margin-bottom: 20px;
   }
+
   .showcase p {
     font-size: 24px;
     margin-bottom: 20px;
   }
-  .showcase-img {
-    text-align: center;
-  }
+
   .showcase-img img {
     border-radius: 10px;
     margin: auto;
   }
-  .showcase-demo {
-    color: #fff;
-    text-align: center;
-    font-weight: 300;
-  }
 
   .smiling_developer {
-    height: 350px;
-    width: 350px;
+    width: 100%;
     border-radius: 50%;
   }
 </style>

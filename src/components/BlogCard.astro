@@ -1,0 +1,62 @@
+---
+export interface Props {
+  image: string;
+  title: any;
+  excerpt: any;
+  slug: any;
+}
+const { image, title, excerpt, slug } = Astro.props as Props;
+---
+
+<div class="blog_card">
+  <div class="image">
+    <img src={image} />
+  </div>
+  <div class="content">
+    <h3>{title}</h3>
+    <p>{excerpt}</p>
+    <a class="btn" href={`/${slug}`}> Read More</a>
+  </div>
+</div>
+
+<style>
+  .blog_card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+
+  .image {
+    height: 35rem;
+    overflow: hidden;
+  }
+
+  .image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .content {
+    padding: 2rem;
+  }
+
+  @media screen and (min-width: 900px) {
+    .blog_card {
+      display: flex;
+      /* height: 35rem; */
+      overflow: hidden;
+    }
+
+    .image {
+      height: auto;
+      flex: 4;
+    }
+
+    .content {
+      flex: 6;
+    }
+  }
+</style>

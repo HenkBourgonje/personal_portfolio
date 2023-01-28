@@ -1,4 +1,5 @@
 ---
+image: "src/images/factory.jpg"
 title: Factory Pattern in Go
 slug: factory_pattern_in_go
 excerpt: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptate, quae, quod, voluptates quibusdam voluptatibus quidem voluptatum quos quia quas nesciunt. Quisquam, quae. Quisquam, quae. Quisquam, quae. Quisquam, quae.

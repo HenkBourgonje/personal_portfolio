@@ -8,19 +8,27 @@ const featuresData = [
     image: klippaLogo,
     title: "Backend Developer",
     body: "Astro renders HTML on the server and strips away any remaining, unused JavaScript. Astro renders HTML on the server and strips away any remaining, unused JavaScript. ",
-    techList: ["Golang", "GraphQL", "MySQL"],
+    techList: ["Golang", "GraphQL", "Kubernetes/Helm", "MySQL", "Git"],
   },
   {
     image: ordinaLogo,
-    title: "Backend Developer",
+    title: "Software Engineer",
     body: " Need interactive UI? Load individual, non-blocking component islands in parallel. Astro renders HTML on the server and strips away any remaining, unused JavaScript. ",
-    techList: ["Golang", "GraphQL", "MySQL"],
+    techList: ["Java", "Angular", "Postgres", "HTML/CSS", "Ionic", "Git"],
   },
   {
     image: ordinaLogo,
     title: "Blockchain Graduation Project",
     body: "Components only hydrate when they scroll into view. If you don't see it, Astro won't load it. Astro renders HTML on the server and strips away any remaining, unused JavaScript.",
-    techList: ["Golang", "GraphQL", "MySQL"],
+    techList: [
+      "Solidity",
+      "Javascript",
+      "HTML/CSS",
+      "Truffle",
+      "Ganache",
+      "Metamask",
+      "Git",
+    ],
   },
 ];
 ---
@@ -41,6 +49,10 @@ const featuresData = [
 </section>
 
 <style>
+  .features {
+    background: linear-gradient(0deg, #fff 80%, #0f172a 20%);
+  }
+
   .features .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

@@ -1,4 +1,5 @@
 ---
+image: "src/images/small_vs_large_company.jpg"
 title: Should I go work at a large corporation or at a scaleup?
 slug: large_vs_small_company
 excerpt: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptate, quae, quod, voluptates quibusdam voluptatibus quidem voluptatum quos quia quas nesciunt. Quisquam, quae. Quisquam, quae. Quisquam, quae. Quisquam, quae.

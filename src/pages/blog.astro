@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/layout.astro";
-import Blog from "../components/Blog.astro";
+import BlogCard from "../components/BlogCard.astro";
 
 const posts = await Astro.glob("../posts/*.md");
 ---
@@ -10,7 +10,8 @@ const posts = await Astro.glob("../posts/*.md");
     <div class="container">
       {
         posts.map((post) => (
-          <Blog
+          <BlogCard
+            image={post.frontmatter.image}
             title={post.frontmatter.title}
             excerpt={post.frontmatter.excerpt}
             slug={post.frontmatter.slug}
@@ -20,3 +21,10 @@ const posts = await Astro.glob("../posts/*.md");
     </div>
   </section>
 </Layout>
+
+<style>
+  .container {
+    width: 80%;
+    margin: 2rem auto;
+  }
+</style>

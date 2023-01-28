@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/layout.astro";
-import Card from "../components/Card.astro";
 export async function getStaticPaths() {
   const posts = await Astro.glob("../posts/*.md");
   return posts.map((post) => ({
