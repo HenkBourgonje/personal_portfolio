@@ -80,3 +80,8 @@
   .page-content h3 {
     font-size: 25px;
   }
+
+  .astro-code {
+    border-radius: 1rem;
+    padding: 1rem;
+  }
