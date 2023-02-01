@@ -4,12 +4,12 @@ import PageTitle from "../components/PageTitle.astro";
 ---
 
 <Layout title="Say Hello">
-  <PageTitle
-    title={"Thanks for reaching out!"}
-    subTitle={"How can I help you today?"}
-  />
   <section class="page-content">
     <div class="container">
+      <PageTitle
+        title={"Thanks for reaching out!"}
+        subTitle={"How can I help you today?"}
+      />
       <form
         action="https://formsubmit.co/28c188b3d3f73ffc180f21b8afb4caf8"
         method="POST"
@@ -64,5 +64,25 @@ import PageTitle from "../components/PageTitle.astro";
     padding: 1rem;
     border: 1px solid #e6ecf8;
     border-radius: 0.3rem;
+  }
+
+  @media (max-width: 1100px) {
+    input[id="name"] {
+      grid-column: span 2;
+    }
+
+    input[id="email"] {
+      grid-column: span 2;
+    }
+
+    input[type="submit"] {
+      grid-column: span 2;
+    }
+  }
+
+  @media (max-width: 600px) {
+    form {
+      grid-template-columns: 37vw 37vw;
+    }
   }
 </style>

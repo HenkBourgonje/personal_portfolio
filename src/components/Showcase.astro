@@ -30,7 +30,6 @@ const text =
 <style>
   .showcase-header {
     display: flex;
-    height: 40vh;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -71,5 +70,17 @@ const text =
   .smiling_developer {
     width: 100%;
     border-radius: 50%;
+  }
+
+  @media (max-width: 1480px) {
+    .showcase-text {
+      padding-right: 2rem;
+    }
+  }
+
+  @media (max-width: 780px) {
+    .showcase-header {
+      flex-direction: column;
+    }
   }
 </style>

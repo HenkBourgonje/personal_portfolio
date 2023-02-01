@@ -43,6 +43,7 @@
   .container {
     max-width: 1200px;
     margin: 0 auto;
+    width: 80vw;
   }
 
   .btn {
@@ -70,15 +71,15 @@
   
   .page-content h2,
   .page-content h3 {
-    margin: 20px 0;
+    /* margin: 20px 0; */
   }
   
   .page-content h2 {
-    font-size: 40px;
+    /* font-size: 40px; */
   }
   
   .page-content h3 {
-    font-size: 25px;
+    /* font-size: 25px; */
   }
 
   .astro-code {

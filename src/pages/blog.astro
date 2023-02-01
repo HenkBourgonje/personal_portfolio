@@ -7,8 +7,8 @@ const posts = await Astro.glob("../posts/*.md");
 ---
 
 <Layout title="Blog">
-  <PageTitle title={"Blog"} subTitle={"Always something to read..."} />
   <section class="page-content">
+    <PageTitle title={"Blog"} subTitle={"Always something to read..."} />
     <div class="container">
       {
         posts.map((post) => (
