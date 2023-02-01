@@ -1,0 +1,64 @@
+---
+import Layout from "../layouts/layout.astro";
+---
+
+<Layout title="Say Hello">
+  <section class="page-content">
+    <div class="container">
+      <h1>Thanks for reaching out. How can I help you today?</h1>
+      <form
+        action="https://formsubmit.co/28c188b3d3f73ffc180f21b8afb4caf8"
+        method="POST"
+      >
+        <input type="text" id="name" name="Name" placeholder="Name" />
+        <input type="text" id="email" name="Email" placeholder="Email" />
+        <textarea
+          class="full_width"
+          id="message"
+          name="message"
+          placeholder="Message"></textarea>
+        <input class="btn full_width" type="submit" />
+      </form>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  h1 {
+    text-align: center;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: 20vw 20vw;
+    grid-auto-rows: 3rem;
+    grid-gap: 1rem;
+    justify-content: center;
+  }
+
+  input[id="name"] {
+    grid-column: span 1;
+  }
+
+  input[id="email"] {
+    grid-column: span 1;
+  }
+
+  textarea {
+    grid-column: span 2;
+    grid-row: span 3;
+  }
+
+  input[type="submit"] {
+    grid-column: span 1;
+    justify-items: center;
+  }
+
+  input,
+  textarea {
+    font-size: 1rem;
+    padding: 1rem;
+    border: 1px solid #e6ecf8;
+    border-radius: 0.3rem;
+  }
+</style>

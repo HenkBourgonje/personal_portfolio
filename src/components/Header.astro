@@ -14,7 +14,11 @@ import githubLogo from "../images/github-mark-white.svg";
     <nav>
       <ul>
         <li><a href="/blog">Blog</a></li>
-        <li><button class="btn">Say Hello</button></li>
+        <li>
+          <a href="/contact">
+            <button class="btn">Say Hello</button>
+          </a>
+        </li>
         <li>
           <a href="https://www.linkedin.com/in/henk-bourgonje/" target="_blank"
             ><img class="header_logo" src={linkedInLogo} />
@@ -56,5 +60,8 @@ import githubLogo from "../images/github-mark-white.svg";
   }
   .header nav ul li a {
     color: #fff;
+  }
+  .btn {
+    border-radius: 2rem;
   }
 </style>
