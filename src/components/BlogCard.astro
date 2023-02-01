@@ -8,16 +8,17 @@ export interface Props {
 const { image, title, excerpt, slug } = Astro.props as Props;
 ---
 
-<div class="blog_card">
-  <div class="image">
-    <img src={image} />
+<a href={`/blog/${slug}`}>
+  <div class="blog_card">
+    <div class="image">
+      <img src={image} />
+    </div>
+    <div class="content">
+      <h3>{title}</h3>
+      <p>{excerpt}</p>
+    </div>
   </div>
-  <div class="content">
-    <h3>{title}</h3>
-    <p>{excerpt}</p>
-    <a class="btn" href={`/blog/${slug}`}> Read More</a>
-  </div>
-</div>
+</a>
 
 <style>
   .blog_card {
