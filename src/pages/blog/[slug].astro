@@ -1,5 +1,7 @@
 ---
 import Layout from "../../layouts/layout.astro";
+import PageTitle from "../../components/PageTitle.astro";
+
 export async function getStaticPaths() {
   const posts = await Astro.glob("../../posts/*.md");
   return posts.map((post) => ({
@@ -16,10 +18,9 @@ const { Content, frontmatter } = Astro.props.post;
 ---
 
 <Layout title={frontmatter.title}>
+  <PageTitle title={frontmatter.title} subTitle={""} />
   <section class="page-content">
     <div class="container">
-      <a class="btn" href="/blog">Go Back</a>
-      <h2>{frontmatter.title}</h2>
       <div>
         Written by <strong>{frontmatter.author}</strong> on {
           new Date(frontmatter.date).toLocaleDateString()

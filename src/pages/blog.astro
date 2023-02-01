@@ -1,11 +1,13 @@
 ---
 import Layout from "../layouts/layout.astro";
 import BlogCard from "../components/BlogCard.astro";
+import PageTitle from "../components/PageTitle.astro";
 
 const posts = await Astro.glob("../posts/*.md");
 ---
 
 <Layout title="Blog">
+  <PageTitle title={"Blog"} subTitle={"Always something to read..."} />
   <section class="page-content">
     <div class="container">
       {

@@ -1,0 +1,27 @@
+---
+export interface Props {
+  title: string;
+  subTitle: string;
+}
+
+const { title, subTitle } = Astro.props as Props;
+---
+
+<div class="page-title">
+  <h1 class="title-text">{title}</h1>
+  <h2 class="subtitle-text">{subTitle}</h2>
+</div>
+
+<style>
+  .page-title {
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .title-text {
+    margin: 1.5rem;
+  }
+</style>

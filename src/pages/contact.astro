@@ -1,11 +1,15 @@
 ---
 import Layout from "../layouts/layout.astro";
+import PageTitle from "../components/PageTitle.astro";
 ---
 
 <Layout title="Say Hello">
+  <PageTitle
+    title={"Thanks for reaching out!"}
+    subTitle={"How can I help you today?"}
+  />
   <section class="page-content">
     <div class="container">
-      <h1>Thanks for reaching out. How can I help you today?</h1>
       <form
         action="https://formsubmit.co/28c188b3d3f73ffc180f21b8afb4caf8"
         method="POST"
