@@ -25,21 +25,26 @@ const projects = [
 ];
 ---
 
-<h3>My Projects</h3>
-<div class="projects">
-  {
-    projects.map((project) => (
-      <ProjectCard
-        title={project.title}
-        desciption={project.desciption}
-        technologies={project.technologies}
-        link={project.link}
-      />
-    ))
-  }
+<div class="container">
+  <h3>My Projects</h3>
+  <div class="projects">
+    {
+      projects.map((project) => (
+        <ProjectCard
+          title={project.title}
+          desciption={project.desciption}
+          technologies={project.technologies}
+          link={project.link}
+        />
+      ))
+    }
+  </div>
 </div>
 
 <style>
+  .container {
+    padding-top: 2rem;
+  }
   .projects {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

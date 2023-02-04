@@ -8,13 +8,13 @@ const { title, subTitle } = Astro.props as Props;
 ---
 
 <div class="page-title">
-  <h1 class="title-text">{title}</h1>
+  <h2 class="title-text">{title}</h2>
   <h2 class="subtitle-text">{subTitle}</h2>
 </div>
 
 <style>
   .page-title {
-    height: 30vh;
+    height: 25vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,5 +23,12 @@ const { title, subTitle } = Astro.props as Props;
 
   .title-text {
     margin: 1.5rem;
+    font-weight: 500;
+    font-size: 2rem;
+  }
+
+  .subtitle-text {
+    font-weight: 500;
+    font-size: 1.5rem;
   }
 </style>
