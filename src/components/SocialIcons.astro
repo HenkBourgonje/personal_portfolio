@@ -1,0 +1,30 @@
+---
+import linkedInLogo from "../images/In-White-128@2x.png";
+import githubLogo from "../images/github-mark-white.svg";
+---
+
+<div class="flex-container">
+  <a
+    class="linkedin"
+    href="https://www.linkedin.com/in/henk-bourgonje/"
+    target="_blank"
+    ><img src={linkedInLogo} />
+  </a>
+  <a class="github" href="https://github.com/HenkBourgonje" target="_blank"
+    ><img class="logo" src={githubLogo} />
+  </a>
+</div>
+
+<style>
+  .flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  img {
+    width: 2rem;
+  }
+</style>

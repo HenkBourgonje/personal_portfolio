@@ -1,67 +1,82 @@
 ---
 import logo from "../images/logo.svg";
-import linkedInLogo from "../images/In-White-128@2x.png";
-import githubLogo from "../images/github-mark-white.svg";
+import FullScreenMenu from "./FullScreenMenu.astro";
+import HamburgerMenuButton from "./HamburgerMenuButton.astro";
+import SocialIcons from "./SocialIcons.astro";
 ---
 
+<script>
+  const menuButton = document.querySelector(".hamburger");
+  const fullScreenMenu = document.querySelector(".mobile-nav");
+  menuButton.addEventListener("click", function () {
+    menuButton.classList.toggle("is-active");
+    fullScreenMenu.classList.toggle("is-active");
+  });
+</script>
+
 <header class="header">
+  <FullScreenMenu />
   <div class="container">
     <div class="logo">
       <a href="/">
         <img src={logo} alt="" />
       </a>
     </div>
-    <nav>
+    <nav class="navigation">
       <ul>
         <li><a href="/blog">Blog</a></li>
-        <li>
+        <li><a href="/blog">Say Hello</a></li>
+        <!-- <li>
           <a href="/contact">
             <button class="btn">Say Hello</button>
           </a>
-        </li>
+        </li> -->
         <li>
-          <a href="https://www.linkedin.com/in/henk-bourgonje/" target="_blank"
-            ><img class="header_logo" src={linkedInLogo} />
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/HenkBourgonje" target="_blank"
-            ><img class="header_logo" src={githubLogo} />
-          </a>
+          <SocialIcons />
         </li>
       </ul>
     </nav>
+    <HamburgerMenuButton class="hamburger-menu" />
   </div>
-</header>
 
-<style>
-  .header {
-    height: 100px;
-    background: var(--color-primary);
-  }
-  .header .container {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 17px;
-  }
-  .header img {
-    height: 35px;
-    vertical-align: middle;
-  }
-  .header nav ul {
-    display: flex;
-    align-items: baseline;
-  }
-  .header nav ul li {
-    height: 42px;
-    padding: 0 14px;
-  }
-  .header nav ul li a {
-    color: #fff;
-  }
-  .btn {
-    border-radius: 2rem;
-  }
-</style>
+  <style>
+    .header {
+      height: 100px;
+      background: var(--color-primary);
+    }
+    .header .container {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 17px;
+    }
+    .header img {
+      height: 35px;
+      vertical-align: middle;
+    }
+    .header nav ul {
+      display: flex;
+      align-items: center;
+    }
+    .header nav ul li {
+      height: 100%;
+      padding: 0 14px;
+    }
+    .header nav ul li a {
+      color: #fff;
+    }
+    .btn {
+      border-radius: 2rem;
+    }
+    .logo {
+      z-index: 99;
+    }
+
+    @media (max-width: 900px) {
+      .navigation {
+        display: none;
+      }
+    }
+  </style>
+</header>
