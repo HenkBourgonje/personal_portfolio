@@ -1,5 +1,5 @@
 ---
-image: "src/images/small_vs_large_company.jpg"
+image: "public/small_vs_large_company.jpg"
 title: Should I go work at a large corporation or at a scaleup?
 slug: large_vs_small_company
 excerpt: When it comes to choosing where to work, one of the biggest decisions people often face is whether to work for a large or a small company. Both have their own unique benefits and drawbacks, and the decision ultimately comes down to an individual's personal preferences and career goals.
