@@ -3,7 +3,7 @@ import Layout from "../layouts/layout.astro";
 import BlogCard from "../components/BlogCard.astro";
 import PageTitle from "../components/PageTitle.astro";
 
-const posts = await Astro.glob("../posts/*.md");
+const posts = await Astro.glob("../posts/*.mdx");
 ---
 
 <Layout title="Blog">
