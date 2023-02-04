@@ -19,7 +19,10 @@ import SocialIcons from "./SocialIcons.astro";
   <div class="container">
     <div class="logo">
       <a href="/">
-        <img src={logo} alt="" />
+        <!-- <img src={logo} alt="" /> -->
+        <h2 class="text-logo">
+          <span>smiling_</span><span class="highlight">developer</span>
+        </h2>
       </a>
     </div>
     <nav class="navigation">
@@ -72,6 +75,15 @@ import SocialIcons from "./SocialIcons.astro";
       .navigation {
         display: none;
       }
+    }
+
+    .text-logo {
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .highlight {
+      color: var(--color-secondary);
     }
   </style>
 </header>

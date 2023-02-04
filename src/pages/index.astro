@@ -1,5 +1,6 @@
 ---
 import Features from "../components/Features.astro";
+import Projects from "../components/Projects.astro";
 import Showcase from "../components/Showcase.astro";
 import Layout from "../layouts/layout.astro";
 ---
@@ -7,6 +8,19 @@ import Layout from "../layouts/layout.astro";
 <Layout>
   <Showcase />
   <Features />
+  <div class="container">
+    <h3>About me</h3>
+    <p>
+      I'm Henk Bourgonje, a software engineer based in Groningen, The
+      Netherlands. I have about four years of professional experience in backend
+      engineering and I am currently expanding my knowledge on the front end,
+      partly by having made this portfolio website. Over the last four years,
+      I've had the opportunity to work for large companies as well as a fast
+      growing scale-up called Klippa, at which I am currently building the
+      backend for a brand new platform in Go.
+    </p>
+    <Projects />
+  </div>
 
   <section class="page-content">
     <div class="container"></div>

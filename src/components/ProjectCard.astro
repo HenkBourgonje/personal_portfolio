@@ -1,0 +1,28 @@
+---
+import Tag from "./Tag.astro";
+
+export interface Props {
+  title: string;
+  desciption: string;
+  technologies: string[];
+  link: string;
+}
+
+const { title, desciption, technologies, link } = Astro.props as Props;
+---
+
+<a href={link}>
+  <div class="card">
+    <h3>{title}</h3>
+    <p>{desciption}</p>
+    {technologies.map((technology) => <Tag title={technology} />)}
+  </div>
+</a>
+
+<style>
+  .card {
+    padding: 2rem 2rem;
+    border-radius: 0.9rem;
+    box-shadow: 0 0 0.9rem rgba(0, 0, 0, 0.1);
+  }
+</style>

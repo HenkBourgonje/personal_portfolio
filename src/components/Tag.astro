@@ -1,0 +1,19 @@
+---
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props as Props;
+---
+
+<span class="tag">{title}</span>
+
+<style>
+  .tag {
+    padding: 0.6rem 0.8rem;
+    border-radius: 0.4rem;
+    background-color: var(--color-primary);
+    color: #fff;
+    font-weight: 600;
+  }
+</style>
