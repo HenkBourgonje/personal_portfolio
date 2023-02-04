@@ -2,17 +2,54 @@
 image: "src/images/factory.jpg"
 title: Factory Pattern in Go
 slug: factory_pattern_in_go
-excerpt: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptate, quae, quod, voluptates quibusdam voluptatibus quidem voluptatum quos quia quas nesciunt. Quisquam, quae. Quisquam, quae. Quisquam, quae. Quisquam, quae.
+excerpt: The factory pattern is a design pattern that is commonly used in object-oriented programming to create objects without specifying the exact class of object that will be created. This pattern is particularly useful in situations where a class hierarchy exists, but the client code should be decoupled from the classes that are being instantiated. In this blog post, we will take a look at how to implement the factory pattern in Go, with a code sample to illustrate how it works.
 date: 2022-08-01
 author: Henk Bourgonje
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis porttitor mauris. Sed quis nulla malesuada, imperdiet ipsum eleifend, pharetra lacus. Maecenas vehicula tincidunt lorem sed elementum. Vestibulum luctus consectetur risus at aliquet. Donec ac sapien malesuada, congue neque ultrices, fringilla velit. Suspendisse potenti. Maecenas ac elit sem. Suspendisse malesuada ligula eu efficitur vulputate. Mauris tincidunt urna a elit ultricies porttitor. Donec vestibulum nibh euismod lectus rutrum sollicitudin. Aliquam luctus urna volutpat erat malesuada sodales. Etiam dapibus interdum est, sit amet aliquet turpis accumsan non. Sed tincidunt felis ut magna tincidunt, sit amet mollis neque ultricies. Duis mollis, libero sit amet dictum faucibus, mauris sapien volutpat est, sit amet molestie enim eros et lorem.
+The factory pattern is a design pattern that is commonly used in object-oriented programming to create objects without specifying the exact class of object that will be created. This pattern is particularly useful in situations where a class hierarchy exists, but the client code should be decoupled from the classes that are being instantiated. In this blog post, we will take a look at how to implement the factory pattern in Go, with a code sample to illustrate how it works.
 
-Morbi interdum mi at nisl aliquam, eu tristique diam efficitur. Etiam at placerat elit. Phasellus a risus pretium, vulputate lectus ut, eleifend ex. Proin facilisis odio a magna sodales rutrum. Fusce venenatis mi ipsum, nec sagittis augue dapibus nec. Proin vel enim varius, sollicitudin mauris id, viverra tortor. Phasellus feugiat, ex commodo malesuada congue, elit ipsum lacinia velit, et fermentum nunc nunc id quam. Proin at quam vitae dui lobortis congue eu elementum quam. Ut mattis, magna vitae condimentum dignissim, ligula nisl fermentum lectus, sed lobortis magna lectus a enim. Quisque vitae purus rutrum, euismod urna auctor, egestas sem. Aenean dictum, nisl vel imperdiet mattis, urna justo varius massa, sed sollicitudin dui massa non eros. Sed mi elit, sagittis sit amet turpis in, faucibus consectetur justo. Nam non tincidunt tortor, vel pellentesque tellus. Integer posuere nisi vel porta malesuada. Etiam scelerisque quam arcu, quis lacinia magna accumsan ac.
+The factory pattern is implemented by creating a factory function that takes in the necessary parameters and returns an instance of the desired class. The factory function is responsible for creating and returning the appropriate instance, based on the parameters passed to it. Here is an example of a factory function that creates instances of different types of vehicles:
 
-In dignissim interdum diam, eget iaculis libero venenatis vel. Aliquam tristique finibus pellentesque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus viverra mollis consectetur. Donec eleifend sem sit amet vulputate fermentum. Nulla tincidunt, libero in efficitur euismod, lorem augue tristique mi, a imperdiet nunc ipsum eu ligula. Cras aliquam dictum est eu bibendum. Quisque viverra mauris augue, sit amet sollicitudin quam bibendum non. Morbi aliquam placerat vestibulum. Nulla facilisi. In in dolor id ex molestie luctus non a tortor. Sed lacus sem, ornare dignissim tellus ut, dictum sodales erat. Nulla facilisi. Maecenas mollis lacus in dolor interdum ultrices. Curabitur dignissim orci dolor, id imperdiet libero vulputate eget.
+```go
+type Vehicle interface {
+	Drive() string
+}
 
-Curabitur eget augue sed leo tempor cursus a ac nunc. Quisque maximus aliquet nisl, sed auctor tellus venenatis at. Nam id efficitur lacus. Duis mattis laoreet tempus. Suspendisse tellus nisi, porta nec nulla vitae, gravida euismod magna. Sed maximus suscipit dui at commodo. Nunc arcu sapien, auctor in porttitor quis, porta nec magna. Ut sed augue vel libero placerat aliquet sit amet in enim. Morbi id malesuada magna. In iaculis gravida fermentum. Suspendisse sed magna sem.
+type Car struct{}
 
-Etiam eu tortor placerat, eleifend quam vel, sollicitudin tellus. Fusce at eros vestibulum, finibus augue auctor, vulputate metus. Morbi porta felis sed vehicula vulputate. Cras porta laoreet urna, ac eleifend nunc feugiat at. Pellentesque dignissim sem dui, eget volutpat quam ultricies vitae. Mauris sed condimentum tortor. Aenean bibendum enim sit amet nisi dignissim, vel ultrices ex accumsan. Integer felis orci, imperdiet at dapibus quis, rutrum ut nisl. Proin sit amet tellus in nibh mollis tempus sed sit amet diam. Donec pharetra vestibulum porttitor. Nullam ornare nulla dignissim lectus venenatis ornare. In eu maximus ante.
+func (c *Car) Drive() string {
+	return "Vroom!"
+}
+
+type Truck struct{}
+
+func (t *Truck) Drive() string {
+	return "Rumble!"
+}
+
+func NewVehicle(t string) Vehicle {
+	switch t {
+	case "car":
+		return &Car{}
+	case "truck":
+		return &Truck{}
+	default:
+		return nil
+	}
+}
+
+func main() {
+	vehicle := NewVehicle("car")
+	fmt.Println(vehicle.Drive())
+	// Output: "Vroom!"
+}
+```
+
+In this example, we have defined an interface Vehicle which has a method Drive() . Then we have created two structs Car, Truck which implements the Vehicle interface and have their own implementation of the Drive method. The factory function NewVehicle takes a string as parameter and returns an instance of the struct based on the string value passed.
+
+The factory pattern can be useful when you want to create objects without specifying the exact class of object that will be created, or when you want to decouple the client code from the classes that are being instantiated. By using a factory function, the client code can simply call the factory function and let it handle the details of creating the appropriate instance, without needing to know the details of the classes that are being instantiated.
+
+In this example, the factory function NewVehicle is responsible for creating and returning the appropriate vehicle instance, based on the type passed as a parameter. The client code can simply call the factory function and let it handle the details of creating the appropriate instance, without needing to know the details of the Car and Truck structs.
+
+In conclusion, The factory pattern is a powerful technique that can be used to create objects in a flexible and decoupled way. It allows you to create objects without specifying the exact class of object that will be created, and it can be used to decouple the client code from the classes that are being instantiated. Implementing the factory pattern in Go is relatively simple, and it can make your code more flexible and easier to maintain in the long run.
