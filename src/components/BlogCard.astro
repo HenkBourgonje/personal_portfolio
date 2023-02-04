@@ -1,18 +1,14 @@
 ---
 export interface Props {
-  image: string;
   title: any;
   excerpt: any;
   slug: any;
 }
-const { image, title, excerpt, slug } = Astro.props as Props;
+const { title, excerpt, slug } = Astro.props as Props;
 ---
 
 <a href={`/blog/${slug}`}>
   <div class="blog_card">
-    <div class="image">
-      <img src={image} />
-    </div>
     <div class="content">
       <h3>{title}</h3>
       <p>{excerpt}</p>

@@ -13,7 +13,6 @@ const posts = await Astro.glob("../posts/*.mdx");
       {
         posts.map((post) => (
           <BlogCard
-            image={post.frontmatter.image}
             title={post.frontmatter.title}
             excerpt={post.frontmatter.excerpt}
             slug={post.frontmatter.slug}
