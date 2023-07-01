@@ -2,41 +2,35 @@
 import Card from "./Card.astro";
 import klippaLogo from "../images/klippa_logo.webp";
 import ordinaLogo from "../images/ordina_logo.png";
-
-const featuresData = [
-  {
-    image: klippaLogo,
-    title: "Backend Developer",
-    body: "For Klippa I am working on the backend of a brand new greenfield self sign-on platform for clients to access and manage their usage of the company's services.",
-    techList: ["Golang", "GraphQL", "Kubernetes/Helm", "MySQL", "Git"],
-  },
-  {
-    image: ordinaLogo,
-    title: "Software Engineer",
-    body: "For Ordina I worked on a contract basis for a government agency as well as a couple of internal projects. I have learned a great deal about software engineering in big enterprises.",
-    techList: ["Java", "Angular", "HTML/CSS", "Ionic", "Git"],
-  },
-  {
-    image: ordinaLogo,
-    title: "Blockchain Graduation Project",
-    body: "For my graduation project I have researched the capabilties of applying shared ownership on real estate on the Ethereum blockchain.",
-    techList: ["Solidity", "Typescript", "HTML/CSS", "Git"],
-  },
-];
+import TextLogoCard from "./TextLogoCard.astro";
 ---
 
 <section class="features">
   <div class="container">
-    {
-      featuresData.map((feature) => (
-        <Card
-          image={feature.image}
-          title={feature.title}
-          body={feature.body}
-          techList={feature.techList}
-        />
-      ))
-    }
+    <Card
+      image={klippaLogo}
+      title="Backend Developer",
+      startsAt="09-2021"
+      endsAt="Now"
+      body="For Klippa I am working on the backend of a brand new greenfield self sign-on platform for clients to access and manage their usage of the company's services.",
+      techList={["Golang", "GraphQL", "Docker/Kubernetes/Helm", "MySQL", "Git"]}
+    />
+    <TextLogoCard
+      textLogo="TBA"
+      title="Founder"
+      startsAt="02-2023"
+      endsAt="Now"
+      body="In my free time, I am building a platform with the goal of changing the way people apply for work. More information will be coming as soon as the beta version is live."
+      techList={["SvelteKit", "Astro", "Cloudflare", "Typescript", "Supabase"]}
+    />
+    <Card
+      image={ordinaLogo}
+      title="Software Engineer"
+      startsAt="02-2019"
+      endsAt="09-2021"
+      body="For Ordina I worked on a contract basis for a government agency as well as a couple of internal projects. I have learned a great deal about software engineering in big enterprises.",
+      techList={["Golang", "GraphQL", "Kubernetes/Helm", "MySQL", "Git"]}
+    />
   </div>
 </section>
 

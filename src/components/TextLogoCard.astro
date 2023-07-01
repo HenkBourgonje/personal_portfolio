@@ -1,17 +1,17 @@
 ---
 export interface Props {
-  image: string;
+  textLogo: string;
   title: string;
   startsAt: string;
   endsAt: string;
   body: string;
   techList: string[];
 }
-const { image, title, startsAt, endsAt, body, techList } = Astro.props as Props;
+const { textLogo, title, startsAt, endsAt, body, techList } = Astro.props as Props;
 ---
 
 <div class="card">
-  <img class="image" src={image} alt="" />
+  <h1 class="text-logo">{textLogo}</h1>
   <h3>{title}</h3>
   <p>{startsAt} | {endsAt}</p>
   <p>{body}</p>
@@ -23,16 +23,16 @@ const { image, title, startsAt, endsAt, body, techList } = Astro.props as Props;
 </div>
 
 <style>
+  .text-logo {
+    margin-bottom: 1.2rem;
+    font-size: 32px;
+  }
+  
   .card {
     background: #fff;
     padding: 2rem 2rem;
     border-radius: 0.9rem;
     box-shadow: 0 0 0.9rem rgba(0, 0, 0, 0.1);
     text-align: center;
-  }
-
-  .image {
-    max-height: 2.4rem;
-    margin-bottom: 1rem;
   }
 </style>
